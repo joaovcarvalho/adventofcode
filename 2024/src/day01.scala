@@ -1,9 +1,7 @@
-//> using scala 3.5.2
-//> using toolkit 0.6.0
 import scala.io.Source._
 
-object Params {
-    val InputTextFile = "input_1.txt"
+object Day01Params {
+    val InputTextFile = "day01.txt"
     val Separator = "  "
 }
 
@@ -15,10 +13,10 @@ def getListByIndex(index: Int, groupedBy: Map[Int, List[(Int, Int)]]) = {
 }
 
 @main
-def hello(): Unit =
-  val lines = fromFile(Params.InputTextFile).getLines
+def day01(): Unit =
+  val lines = fromFile(Day01Params.InputTextFile).getLines
   val values = lines.map(
-    _.split(Params.Separator).map(_.trim.toInt).zipWithIndex
+    _.split(Day01Params.Separator).map(_.trim.toInt).zipWithIndex
   ).toList
 
   val groupedBy = values.flatten.groupBy(_._2)
